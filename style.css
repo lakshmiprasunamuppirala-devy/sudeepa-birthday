@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #f7e8ff, #ffeaf4, #eee5ff);
+  color: #4b3158;
+  overflow-x: hidden;
+}
+
+.page {
+  width: min(900px, 92%);
+  margin: auto;
+  padding: 35px 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: rgba(255,255,255,0.86);
+  border: 2px solid rgba(255,255,255,0.9);
+  border-radius: 30px;
+  padding: 35px 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(112, 65, 130, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.hero {
+  animation: appear 1s ease;
+}
+
+.small-title {
+  color: #a06ab8;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 7vw, 4.3rem);
+  color: #71427d;
+  line-height: 1.1;
+}
+
+h1 span {
+  color: #d75b9d;
+}
+
+.subtitle {
+  margin: 16px auto 25px;
+  max-width: 600px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.sparkles {
+  color: #c889d7;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  letter-spacing: 8px;
+}
+
+.photo-frame {
+  width: min(360px, 90%);
+  margin: 0 auto 28px;
+  padding: 10px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(87, 49, 99, 0.2);
+  transform: rotate(-1deg);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 17px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 15px 26px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #d85a9d, #8e62c6);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(142, 98, 198, 0.28);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hidden {
+  display: none;
+}
+
+.cake {
+  font-size: 4rem;
+  animation: bounce 1.5s infinite;
+}
+
+h2 {
+  color: #75437f;
+  font-size: 2rem;
+  margin: 12px 0 18px;
+}
+
+.message {
+  max-width: 680px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.mini-hearts {
+  margin-top: 25px;
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+}
+
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.wish-grid div {
+  padding: 18px 10px;
+  background: #fff0f8;
+  border-radius: 18px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #8d6797;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 20px;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatUp 5s linear forwards;
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 16px;
+  z-index: 10;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding-top: 18px;
+  }
+
+  .card {
+    padding: 28px 16px;
+    border-radius: 24px;
+  }
+
+  .photo-frame img {
+    height: 390px;
+  }
+
+  .wish-grid {
+    grid-template-columns: 1fr;
+  }
+}
